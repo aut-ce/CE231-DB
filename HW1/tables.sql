@@ -23,7 +23,8 @@ create table rides ( id int primary key auto_increment, passenger int references
         source_lat decimal(10, 8) not null, source_lng decimal(11, 8) not null,
         destination_lat decimal(10, 8) not null, destination_lng decimal(11, 8) not null,
         second_destination_lat decimal(10, 8), second_destination_lng decimal(11, 8),
-        total_price int not null, final_price int not null, discount text);
+        total_price int not null, final_price int not null, discount text,
+        start_time datetime not null, finish_time datetime not null, score int not null);
 
 drop table if exists discounts;
 create table discounts ( code varchar(20), passenger int references passengers(id), availables int not null, primary key (code, passenger))
