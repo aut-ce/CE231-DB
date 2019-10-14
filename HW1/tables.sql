@@ -11,6 +11,9 @@
 /*
  * Copyright (c) 2019 Parham Alvani.
 */
+drop database if exists snapp;
+create database snapp;
+use snapp;
 
 drop table if exists drivers;
 create table drivers ( id int primary key auto_increment, first_name text not null, last_name text not null, status int default 0, phone text not null);
